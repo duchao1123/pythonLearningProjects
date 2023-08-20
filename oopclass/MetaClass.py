@@ -49,12 +49,14 @@ class SingleInstanceClass(type):
     def __init__(cls, *args, **kwargs):
         # 定义实例
         cls._instance = None
+        # 注意调用type的参数
+        # TypeError: type.__init__() takes 1 or 3 arguments
         type.__init__(cls, *args, **kwargs)
 
     def __call__(cls, *args, **kwargs):
         if cls._instance is None:
+            # 注意调用type的参数
             cls._instance = type.__call__(cls, *args, **kwargs)
-            return cls._instance
         return cls._instance
 
 

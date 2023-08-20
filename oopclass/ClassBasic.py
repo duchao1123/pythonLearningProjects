@@ -21,6 +21,11 @@ work(Singer())
 work(Farmer())
 work(Pingtouge())
 不必在乎调用work参数是谁，也不像java 有接口控制共同能力，只要具备work函数就行
+
+抽象类
+导包：from abc import ABC, abstractmethod
+定义抽象类 class xxx(ABC)
+定义抽象方法：@abstractmethod
 """
 
 
